@@ -81,7 +81,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                     std::string tokenInfo = tokenStr.substr(posTokenInfo + 1, tokenStr.size() - 1);
 
                     // add token to vector
-                    tokens.push_back(std::make_pair(tokenType, tokenInfo));
+                    tokens.emplace_back(std::make_pair(tokenType, tokenInfo));
                 }
 
                 // remove token from current line
@@ -199,7 +199,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     chat_bot.SetRootNode(rootNode);
     chat_bot.SetChatLogicHandle(this);
     rootNode->MoveChatbotHere(std::move(chat_bot));
-    
     ////
     //// EOF STUDENT CODE
 }

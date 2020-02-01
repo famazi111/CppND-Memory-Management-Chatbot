@@ -18,7 +18,7 @@ GraphNode::~GraphNode()
 
 void GraphNode::AddToken(std::string token)
 {
-    _answers.push_back(token);
+    _answers.emplace_back(token);
 }
 
 void GraphNode::AddEdgeToParentNode(GraphEdge *edge)

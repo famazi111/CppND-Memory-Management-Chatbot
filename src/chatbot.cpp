@@ -119,7 +119,7 @@ void ChatBot::ReceiveMessageFromUser(std::string message)
         for (auto keyword : edge->GetKeywords())
         {
             EdgeDist ed{edge, ComputeLevenshteinDistance(keyword, message)};
-            levDists.push_back(ed);
+            levDists.emplace_back(ed);
         }
     }
 
